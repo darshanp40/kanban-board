@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearTax Board</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,300;0,400;&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/materialdesignfonts/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="./styles/minireset.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <section id="modal" class="">
+        <div class="modal-bg"></div>
+        <div class="modal-container">
+            <div class="row">
+                <input type="text" placeholder="Description" id="description" class="control">
+            </div>
+            <div class="row  mb-4rem">
+                <div class="col">
+                    <input type="date" placeholder="Due Date" id="due-date" class="control">
+                </div>
+                <div class="col clearfix">
+                    <div class="select pulled-right">
+                        <select id="status" class="control">
+                            <option value="PLANNED">Planned</option>
+                            <option value="STARTED">Started</option>
+                            <option value="DONE">Done</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="select  pulled-right">
+                        <select id="assignee" placeholder="Assignee" class="control">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="button success" id="save">Save</button>
+                    <button class="button warning" id="cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <nav class="nav-bar">
+        <h1 class="page-title">Task Board</h1>
+        <section id="members-container">
+        </section>
+        <section class="add-member-container">
+            <span class="member" id="add-member">
+                <i class="mdi mdi-plus-circle"></i>
+            </span>
+            <div class="add-member-control hidden" id="member-add-control">
+                <input type="text" placeholder="Member name" id="member-name" class="control">
+                <button class="button success" id="member-save">Save</button>
+                <button class="button warning" id="member-cancel">Cancel</button>
+            </div>
+        </section>
+    </nav>
+    <section class="board" id="board-container">
+        <section class="lane">
+            <h2 class="title">Planned</h2>
+            <div class="lane-section">
+                <div id="planned-items"></div>
+                <button class="button" id="add-planned-task">Add Task</button>
+            </div>
+        </section>
+        <section class="lane">
+            <h2 class="title">Started</h2>
+            <div class="lane-section">
+                <div id="started-items"></div>
+                <button class="button" id="add-started-task">Add Task</button>
+            </div>
+        </section>
+        <section class="lane">
+            <h2 class="title">Done</h2>
+            <div class="lane-section">
+                <div id="done-items"></div>
+                <button class="button" id="add-done-task">Add Task</button>
+            </div>
+        </section>
+    </section>
+
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
